@@ -1,0 +1,29 @@
+server:
+  port: 8080
+#  servlet:
+#    context-path: /
+
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://192.168.31.64:1433;DatabaseName=FileUpload;
+    username: sa
+    password: mofei
+    type: com.alibaba.druid.pool.DruidDataSource
+  web:
+    resources:
+      static-locations: classpath:/static/,classpath:/templates/
+  mvc:
+    static-path-pattern: /**
+
+#spring:
+#  security:
+#    user:
+#      name: root
+#      password: mofei
+mybatis:
+  mapper-locations: classpath:com/security/mapper/*.xml
+  type-aliases-package: com.security.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
